@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ventora Otomasyon</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#060b16;
+color:white;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+width:700px;
+height:700px;
+background:#00bfff18;
+filter:blur(120px);
+top:-300px;
+right:-200px;
+z-index:-1;
+}
+
+.container{
+width:90%;
+max-width:1400px;
+margin:auto;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+z-index:999;
+background:rgba(6,11,22,0.82);
+backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:22px 0;
+}
+
+.logo{
+font-size:30px;
+font-weight:900;
+}
+
+.logo span{
+color:#00cfff;
+}
+
+.menu{
+display:flex;
+gap:35px;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.menu a:hover{
+color:#00cfff;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+padding-top:120px;
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.hero h1{
+font-size:78px;
+line-height:1;
+margin-bottom:25px;
+font-weight:900;
+}
+
+.hero h1 span{
+color:#00cfff;
+}
+
+.hero p{
+font-size:20px;
+line-height:1.9;
+color:#b8c5db;
+margin-bottom:40px;
+}
+
+.btns{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:18px 34px;
+border-radius:16px;
+text-decoration:none;
+font-weight:700;
+transition:0.3s;
+}
+
+.primary{
+background:linear-gradient(135deg,#00cfff,#005eff);
+color:white;
+}
+
+.secondary{
+border:1px solid rgba(255,255,255,0.12);
+color:white;
+}
+
+.primary:hover,.secondary:hover{
+transform:translateY(-5px);
+}
+
+.hero-image img{
+width:100%;
+border-radius:30px;
+background:white;
+padding:10px;
+box-shadow:0 30px 70px rgba(0,0,0,0.4);
+}
+
+section{
+padding:120px 0;
+}
+
+.title{
+text-align:center;
+margin-bottom:80px;
+}
+
+.title h2{
+font-size:52px;
+margin-bottom:15px;
+}
+
+.title p{
+font-size:18px;
+color:#9db0cf;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.card{
+background:#0d1528;
+padding:25px;
+border-radius:30px;
+border:1px solid rgba(255,255,255,0.06);
+transition:0.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#00cfff;
+}
+
+.card img{
+width:100%;
+height:250px;
+object-fit:contain;
+background:white;
+padding:12px;
+border-radius:22px;
+margin-bottom:24px;
+}
+
+.card h3{
+font-size:28px;
+margin-bottom:16px;
+}
+
+.card p{
+color:#b8c5db;
+line-height:1.9;
+}
+
+.tech-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
+.tech{
+background:#0d1528;
+padding:30px;
+border-radius:24px;
+text-align:center;
+border:1px solid rgba(255,255,255,0.06);
+}
+
+.tech h3{
+font-size:24px;
+}
+
+.contact{
+background:linear-gradient(135deg,#081120,#12244a);
+padding:90px 50px;
+border-radius:40px;
+text-align:center;
+}
+
+.contact h2{
+font-size:52px;
+margin-bottom:20px;
+}
+
+.phone{
+font-size:28px;
+font-weight:800;
+color:#00cfff;
+line-height:1.8;
+margin:30px 0;
+}
+
+footer{
+padding:40px 0;
+border-top:1px solid rgba(255,255,255,0.06);
+text-align:center;
+color:#9aa8bf;
+}
+
+@media(max-width:1000px){
+.hero-grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:54px;
+}
+
+.tech-grid{
+grid-template-columns:1fr 1fr;
+}
+
+.menu{
+display:none;
+}
+}
+
+@media(max-width:700px){
+.hero h1{
+font-size:42px;
+}
+
+.title h2,.contact h2{
+font-size:36px;
+}
+
+.tech-grid{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+
+<nav>
+
+<div class="logo">
+Ventora <span>Otomasyon</span>
+</div>
+
+<div class="menu">
+<a href="#home">Ana Sayfa</a>
+<a href="#services">Hizmetler</a>
+<a href="#technology">Teknolojiler</a>
+<a href="#contact">İletişim</a>
+</div>
+
+</nav>
+
+</div>
+</header>
+
+<section class="hero" id="home">
+
+<div class="container">
+
+<div class="hero-grid">
+
+<div>
+
+<h1>SMART HVAC <span>AUTOMATION</span></h1>
+
+<p>
+Ventora Otomasyon; Niagara N4, Ontrol ve HVAC otomasyon teknolojileri ile
+yüksek performanslı bina yönetim çözümleri sunmaktadır.
+</p>
+
+<div class="btns">
+
+<a href="#contact" class="btn primary">Teklif Al</a>
+
+<a href="#services" class="btn secondary">Projeleri İncele</a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+<img src="ahu-system.jpg" alt="HVAC AHU System">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="services">
+
+<div class="container">
+
+<div class="title">
+<h2>Profesyonel Hizmetler</h2>
+<p>HVAC ve otomasyon teknolojilerinde profesyonel çözümler.</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="ahu-system.jpg" alt="AHU">
+
+<h3>AHU Otomasyonu</h3>
+
+<p>
+Klima santrali otomasyonu, damper kontrolü,
+filtre alarm sistemleri ve frekans invertör yönetimi.
+</p>
+
+</div>
+
+<div class="card">
+
+<img src="ontrol-plc.gif" alt="Ontrol PLC">
+
+<h3>Ontrol PLC Sistemleri</h3>
+
+<p>
+Ontrol kontrol ürünleri, Niagara N4 entegrasyonu,
+BACnet ve Modbus haberleşme altyapıları.
+</p>
+
+</div>
+
+<div class="card">
+
+<img src="ontrol-plc.gif" alt="PLC">
+
+<h3>BMS Yönetimi</h3>
+
+<p>
+Merkezi izleme, enerji verimliliği,
+uzaktan erişim ve akıllı bina çözümleri.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="technology">
+
+<div class="container">
+
+<div class="title">
+<h2>Kullandığımız Teknolojiler</h2>
+<p>Endüstriyel otomasyonda güçlü altyapılar.</p>
+</div>
+
+<div class="tech-grid">
+
+<div class="tech">
+<h3>Niagara N4</h3>
+</div>
+
+<div class="tech">
+<h3>Ontrol</h3>
+</div>
+
+<div class="tech">
+<h3>BACnet</h3>
+</div>
+
+<div class="tech">
+<h3>Modbus TCP/IP</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="container">
+
+<div class="contact">
+
+<h2>İletişime Geçin</h2>
+
+<p>
+HVAC otomasyon ve bina yönetim sistemleri projeleriniz için bize ulaşın.
+</p>
+
+<div class="phone">
+📞 0536 711 16 06<br>
+📞 0542 557 30 47
+</div>
+
+<div class="btns" style="justify-content:center;">
+
+<a href="https://wa.me/905367111606" class="btn primary">
+WhatsApp
+</a>
+
+<a href="tel:05367111606" class="btn secondary">
+Hemen Ara
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<div class="container">
+© 2026 Ventora Otomasyon — Tüm Hakları Saklıdır.
+</div>
+</footer>
+
+</body>
+</html>
